@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Age Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the back button */
+        .back-button {
+            transition: transform 0.3s ease;
+            background-color: #3182ce;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+            background-color: #4299e1;
+        }
+
+        /* Background image */
+        body {
+            background-image: url('https://images.pexels.com/photos/1000589/pexels-photo-1000589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen">
+    <div class="border border-green-500 p-8 rounded-lg shadow-md" style="border-color: green; background-color: white;">
+        <h1 class="text-3xl font-semibold text-center mb-8 text-green-700">Age Calculator</h1>
+        <div class="flex flex-col mb-4">
+            <label for="inputDob" class="text-gray-700">Enter your Date of Birth</label>
+            <input id="inputDob" type="date"
+                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="flex flex-col mb-4">
+            <label for="cdate" class="text-gray-700">Current Date</label>
+            <input id="cdate" type="date"
+                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="flex justify-between">
+            <button type="button" onclick="getDOB()"
+                class="bg-blue-500 text-white font-semibold px-4 py-2 rounded">Calculate</button>
+            <button type="button" onclick="clearDates()"
+                class="bg-gray-500 text-white font-semibold px-4 py-2 rounded">Clear</button>
+        </div>
+        <div id="currentAge" class="text-center mt-4"></div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html" onclick="history.back()" class="absolute top-4 left-4 back-button">Go Back</a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
